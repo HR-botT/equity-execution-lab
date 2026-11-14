@@ -1,0 +1,20 @@
+scenario_id: "normal_liquidity"
+description: "Baseline depth at five price levels, 1-cent spread."
+
+book:
+  bids:
+    - { price: 99.99, quantity: 5000 }
+    - { price: 99.98, quantity: 8000 }
+    - { price: 99.97, quantity: 12000 }
+    - { price: 99.96, quantity: 15000 }
+    - { price: 99.95, quantity: 20000 }
+  asks:
+    - { price: 100.00, quantity: 5000 }
+    - { price: 100.01, quantity: 8000 }
+    - { price: 100.02, quantity: 12000 }
+    - { price: 100.03, quantity: 15000 }
+    - { price: 100.04, quantity: 20000 }
+
+parent_order: { side: "BUY", quantity: 10000, arrival_price: 100.00 }
+algo: { name: "twap", duration_minutes: 60, slices: 12 }
+venues: ["NASDAQ", "NYSE", "DARK_A"]

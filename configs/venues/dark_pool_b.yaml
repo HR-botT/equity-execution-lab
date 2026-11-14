@@ -1,0 +1,6 @@
+venue_id: "DARK_B"
+type: "dark_pool"
+matching: "VWAP"
+min_block_size: 500
+display: "none"
+pegged_to: "intraday_VWAP"

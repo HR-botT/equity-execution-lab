@@ -1,0 +1,6 @@
+venue_id: "DARK_A"
+type: "dark_pool"
+matching: "midpoint"
+min_block_size: 200
+display: "none"
+pegged_to: "NBBO_midpoint"

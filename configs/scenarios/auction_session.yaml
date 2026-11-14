@@ -1,0 +1,18 @@
+scenario_id: "auction_session"
+description: "Algorithm runs across the closing auction boundary."
+
+sessions:
+  - { name: "regular", start: "15:40", end: "16:00", continuous: true }
+  - { name: "closing_auction", start: "16:00", end: "16:00", continuous: false }
+
+book:
+  bids:
+    - { price: 100.00, quantity: 3000 }
+    - { price: 99.99, quantity: 5000 }
+  asks:
+    - { price: 100.01, quantity: 3000 }
+    - { price: 100.02, quantity: 5000 }
+
+parent_order: { side: "BUY", quantity: 4000, arrival_price: 100.01 }
+algo: { name: "twap", duration_minutes: 20, slices: 4, pause_during_auction: true }
+venues: ["NASDAQ"]
